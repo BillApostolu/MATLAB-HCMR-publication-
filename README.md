@@ -1,2 +1,2 @@
-# MATLAB-HCMR-publication-
+# MATLAB-HCMR-publication
 MATLAB scripts used in my future publication
