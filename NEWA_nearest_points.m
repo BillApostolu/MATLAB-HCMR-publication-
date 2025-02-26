@@ -1,4 +1,4 @@
--This script finds all the wind speed data in timesteps for the nearest four points of the NEWA model to each buoy and saves the data to mat files.
+%This script finds all the wind speed data in timesteps for the nearest four points of the NEWA model to each buoy and saves the data to mat files.
 clear;
 clc;
 
