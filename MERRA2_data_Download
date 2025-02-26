@@ -1,0 +1,34 @@
+#this script directly downloads MERRA-2 data from NASA's database website "https://disc.gsfc.nasa.gov/datasets"
+@echo off
+setlocal enabledelayedexpansion
+
+:: Define paths
+set filelist=1985.txt
+set downloadDir=D:\MERRA2_Downloads
+
+:: Ensure download directory exists
+if not exist "%downloadDir%" mkdir "%downloadDir%"
+
+:: Authentication details
+set username= put yours
+set password= put yours
+:: Read URLs from file
+for /f "usebackq delims=" %%A in ("%filelist%") do (
+    set "url=%%A"
+    
+    :: Extract filename from URL
+    for /f "tokens=2 delims=?" %%B in ("!url!") do (
+        for /f "tokens=6 delims=." %%C in ("%%B") do (
+            set "filename=%%C.nc4"
+        )
+    )
+
+    :: Download file
+    echo Downloading !filename!...
+    wget --user=%username% --password=%password% --content-disposition "!url!" -O "%downloadDir%\!filename!"
+    
+    :: Check if file downloaded successfully
+    if not exist "%downloadDir%\!filename!" (
+        echo ERROR: !filename! not downloaded!!!
+    )
+)
