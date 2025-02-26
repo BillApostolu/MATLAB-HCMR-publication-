@@ -1,4 +1,4 @@
-#This script gives the final data of the buoy's and the model's wind speeds in the same height and the same timesteps.
+%This script gives the final data of the buoy's and the model's wind speeds in the same height and the same timesteps.
 clear
 clc
 buoy_names = {'IR_TS_MO_ValenciaI-buoy','IR_TS_MO_6100196','IR_TS_MO_6100197',...
