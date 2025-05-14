@@ -2,9 +2,7 @@ import os
 import re
 from pathlib import Path
 
-# Specify the folder path here
 FOLDER_PATH = r"E:\MERRA-2"
-
 def rename_merra_files(folder_path):
     """
     Renames MERRA-2 files from MERRA2_number.inst1_2d_lfo_Nx.yyyymmdd.nc4
